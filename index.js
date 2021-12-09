@@ -6,8 +6,9 @@ const { RNIosSettingsBundle } = NativeModules;
 export default {
     get: (key,callback) =>
     {
-          if(Platform == 'android')
-            return callback([1,'it works only on ios!']);
+        if(Platform.OS == 'android') {
+            return;
+        }
 
         RNIosSettingsBundle.getValByKey(key,callback);
     }
